@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+		<!-- Import jQuery and the Parse javascript sdk through respective CDNs -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"/>
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+
+	<script type="text/javascript">
+		//initialize the Parse sdk
+		Parse.initialize('DIT3JA60HbJAQ4Jy76ldSpIQ8E5hxx3t7S9P6FrZ', 'itcGdIPnkvuhIuiMCz4TEV6yaZZ0e8EZ2LX3cVV7');
+
+		//import Parse classes
+		var Example = Parse.Object.extend('Example');
+		var TestArtist = Parse.Object.extend('ExampleArtist');
+		//instantiate objects of Parse classes
+		var example = new Example();
+		var testArtist = new TestArtist();
+		testArtist.save();
+		//assosiate one object with another
+		example.set('Artist', testArtist);
+		//save the object
+		example.save();
+
+	</script>
+</html>
